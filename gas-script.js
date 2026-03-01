@@ -41,7 +41,7 @@
 // ★ 書き換え必須 ★
 var SPREADSHEET_ID    = 'YOUR_SPREADSHEET_ID';
 var SHEET_NAME        = 'シート1';
-var SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/YOUR/WEBHOOK/URL';
+var SLACK_WEBHOOK_URL = 'YOUR_SLACK_WEBHOOK_URL';
 
 // ─────────────────────────────────────────────
 //  POST リクエスト受信
