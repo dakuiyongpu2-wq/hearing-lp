@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>事前ヒアリングシート | 株式会社SNSの右腕</title>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --blue-900: #0c1d3a;
+  --blue-800: #102a50;
+  --blue-700: #1a3a6b;
+  --blue-600: #2553a0;
+  --blue-500: #2d6cdf;
+  --blue-400: #4a8af5;
+  --blue-300: #7db0ff;
+  --blue-100: #dce9ff;
+  --blue-50: #f0f5ff;
+  --gray-900: #111827;
+  --gray-700: #374151;
+  --gray-500: #6b7280;
+  --gray-400: #9ca3af;
+  --gray-300: #d1d5db;
+  --gray-200: #e5e7eb;
+  --gray-100: #f3f4f6;
+  --gray-50: #f9fafb;
+  --white: #fff;
+  --red: #dc2626;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow: 0 4px 24px rgba(0,0,0,0.06);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.1);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+    "Noto Sans JP", sans-serif;
+  background: var(--gray-50);
+  color: var(--gray-900);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Hero ── */
+.hero {
+  background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 50%, var(--blue-600) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 48px 20px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(45,108,223,0.25) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(77,138,245,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
+.hero-company {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--blue-300);
+  margin-bottom: 24px;
+}
+.hero-company .logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+}
+.hero-company .logo-mark svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--blue-300);
+}
+.hero-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid rgba(125,176,255,0.3);
+  background: rgba(125,176,255,0.08);
+  border-radius: 100px;
+  padding: 5px 18px;
+  margin-bottom: 20px;
+  color: var(--blue-300);
+}
+.hero h1 {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.45;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+.hero-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  max-width: 480px;
+  margin: 0 auto 28px;
+  line-height: 1.8;
+}
+.hero-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.06);
+  border-radius: 100px;
+  padding: 6px 16px;
+}
+.hero-time svg {
+  width: 14px;
+  height: 14px;
+  stroke: rgba(255,255,255,0.5);
+  fill: none;
+}
+
+/* ── Progress Bar ── */
+.progress-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 0;
+  box-shadow: var(--shadow-sm);
+}
+.progress-track {
+  height: 3px;
+  background: var(--gray-200);
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue-500), var(--blue-400));
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+/* ── Container ── */
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px 80px;
+}
+
+/* ── Card ── */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 24px;
+  margin-top: 24px;
+  border: 1px solid var(--gray-200);
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--gray-200);
+  margin: 28px 0;
+}
+
+/* ── Form Fields ── */
+.field {
+  margin-bottom: 24px;
+}
+.field:last-child {
+  margin-bottom: 0;
+}
+.field > label,
+.field > .field-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--gray-700);
+}
+.field .tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+.tag-required {
+  background: var(--red);
+  color: var(--white);
+}
+.tag-optional {
+  background: var(--gray-200);
+  color: var(--gray-500);
+}
+.field input[type="text"],
+.field input[type="url"],
+.field input[type="email"],
+.field textarea {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 15px;
+  border: 1.5px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--gray-900);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--gray-400);
+}
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 3px rgba(45,108,223,0.1);
+}
+.field textarea {
+  resize: vertical;
+  min-height: 88px;
+}
+.field .hint {
+  font-size: 12px;
+  color: var(--gray-500);
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+/* ── Choice Group (radio/checkbox) ── */
+.choice-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.choice-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 11px 14px;
+  border: 1.5px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  color: var(--gray-700);
+  user-select: none;
+}
+.choice-item:hover {
+  background: var(--blue-50);
+  border-color: var(--blue-300);
+}
+.choice-item:has(input:checked) {
+  background: var(--blue-50);
+  border-color: var(--blue-500);
+  color: var(--blue-900);
+  box-shadow: 0 0 0 1px var(--blue-500);
+}
+.choice-item input[type="radio"],
+.choice-item input[type="checkbox"] {
+  accent-color: var(--blue-500);
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ── Submit ── */
+.submit-area {
+  margin-top: 32px;
+  text-align: center;
+}
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 400px;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--blue-600), var(--blue-500));
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.1s;
+  box-shadow: 0 4px 16px rgba(45,108,223,0.3);
+  font-family: inherit;
+  letter-spacing: 0.02em;
+}
+.submit-btn:hover {
+  box-shadow: 0 6px 24px rgba(45,108,223,0.4);
+}
+.submit-btn:active {
+  transform: scale(0.98);
+}
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.submit-btn .spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: var(--white);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+.submit-btn.loading .spinner { display: block; }
+.submit-btn.loading .btn-text { display: none; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.submit-note {
+  font-size: 12px;
+  color: var(--gray-400);
+  margin-top: 12px;
+}
+
+/* ── Error ── */
+.field.error input,
+.field.error textarea {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(220,38,38,0.08);
+}
+.field.error .choice-group {
+  border-radius: var(--radius-sm);
+  outline: 2px solid rgba(220,38,38,0.3);
+  outline-offset: 4px;
+}
+.field .error-msg {
+  display: none;
+  font-size: 12px;
+  color: var(--red);
+  margin-top: 5px;
+}
+.field.error .error-msg {
+  display: block;
+}
+
+/* ── Completion Screen ── */
+.completion {
+  display: none;
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+.completion.show {
+  display: block;
+}
+.check-circle {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, var(--blue-500), var(--blue-400));
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  box-shadow: 0 8px 32px rgba(45,108,223,0.25);
+}
+.check-circle svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--white);
+  fill: none;
+}
+.completion h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--gray-900);
+}
+.completion p {
+  font-size: 14px;
+  color: var(--gray-500);
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 12px;
+  color: var(--gray-400);
+}
+
+/* ── Responsive ── */
+@media (min-width: 640px) {
+  .hero { padding: 64px 20px 72px; }
+  .hero h1 { font-size: 32px; }
+  .card { padding: 36px 32px; margin-top: 28px; }
+  .container { padding: 0 20px 80px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-company">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M13.5 2L3 14h9l-1.5 8L21 10h-9l1.5-8z"/></svg>
+      </span>
+      株式会社SNSの右腕
+    </div>
+    <div class="hero-badge">Hearing Sheet</div>
+    <h1>X運用 事前ヒアリングシート</h1>
+    <p class="hero-desc">
+      ご回答いただいた内容をもとに、<br>
+      貴社に最適なX運用プランをご提案いたします。
+    </p>
+    <span class="hero-time">
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      所要時間 約3〜5分
+    </span>
+  </div>
+</header>
+
+<!-- ===== Progress Bar ===== -->
+<div class="progress-bar" id="progressBar">
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+</div>
+
+<!-- ===== Form ===== -->
+<main class="container" id="formContainer">
+  <form id="hearingForm" novalidate>
+
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="field" data-required>
+        <label for="companyName">会社名<span class="tag tag-required">必須</span></label>
+        <input type="text" id="companyName" name="companyName" placeholder="例：株式会社〇〇">
+        <p class="error-msg">会社名を入力してください</p>
+      </div>
+
+      <div class="field" data-required>
+        <label for="contactName">ご担当者名<span class="tag tag-required">必須</span></label>
+        <input type="text" id="contactName" name="contactName" placeholder="例：山田 太郎">
+        <p class="error-msg">ご担当者名を入力してください</p>
+      </div>
+
+      <div class="field" data-required>
+        <label for="email">メールアドレス<span class="tag tag-required">必須</span></label>
+        <input type="email" id="email" name="email" placeholder="example@company.co.jp">
+        <p class="error-msg">メールアドレスを入力してください</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field">
+        <label for="serviceUrl">サービスサイトURL<span class="tag tag-optional">任意</span></label>
+        <input type="url" id="serviceUrl" name="serviceUrl" placeholder="https://example.com">
+      </div>
+
+      <div class="field">
+        <label for="xAccount">Xアカウント<span class="tag tag-optional">任意</span></label>
+        <input type="text" id="xAccount" name="xAccount" placeholder="@example">
+        <p class="hint">既にアカウントをお持ちの場合はご記入ください</p>
+      </div>
+
+      <div class="field">
+        <label for="otherSns">その他SNSアカウント<span class="tag tag-optional">任意</span></label>
+        <textarea id="otherSns" name="otherSns" rows="2" placeholder="Instagram / YouTube / TikTok / Facebook など"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="competitors">競合企業・参考アカウント<span class="tag tag-optional">任意</span></label>
+        <textarea id="competitors" name="competitors" rows="2" placeholder="競合企業名やベンチマークにしたいXアカウントなど"></textarea>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="field" data-required>
+        <div class="field-label">X運用の目的<span class="tag tag-required">必須</span></div>
+        <p class="hint" style="margin-bottom:10px;">あてはまるものをすべてお選びください</p>
+        <div class="choice-group">
+          <label class="choice-item"><input type="checkbox" name="purpose" value="認知拡大・ブランディング"><span>認知拡大・ブランディング</span></label>
+          <label class="choice-item"><input type="checkbox" name="purpose" value="リード獲得・問い合わせ増加"><span>リード獲得・問い合わせ増加</span></label>
+          <label class="choice-item"><input type="checkbox" name="purpose" value="採用・人材獲得"><span>採用・人材獲得</span></label>
+          <label class="choice-item"><input type="checkbox" name="purpose" value="ファンコミュニティ形成"><span>ファンコミュニティ形成</span></label>
+          <label class="choice-item"><input type="checkbox" name="purpose" value="EC・サイトへの集客"><span>EC・サイトへの集客</span></label>
+          <label class="choice-item"><input type="checkbox" name="purpose" value="その他"><span>その他</span></label>
+        </div>
+        <p class="error-msg">1つ以上選択してください</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field">
+        <label for="product">繋げたい商品・サービス<span class="tag tag-optional">任意</span></label>
+        <textarea id="product" name="product" rows="2" placeholder="X運用を通じて訴求したい商品やサービスがあればご記入ください"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="target">ターゲットイメージ<span class="tag tag-optional">任意</span></label>
+        <textarea id="target" name="target" rows="2" placeholder="例：30代男性の経営者、IT企業のマーケティング担当者 など"></textarea>
+      </div>
+
+      <div class="field" data-required>
+        <div class="field-label">発信のトーン・雰囲気<span class="tag tag-required">必須</span></div>
+        <div class="choice-group">
+          <label class="choice-item"><input type="radio" name="tone" value="ビジネス・フォーマル"><span>ビジネス・フォーマル</span></label>
+          <label class="choice-item"><input type="radio" name="tone" value="親しみやすい・カジュアル"><span>親しみやすい・カジュアル</span></label>
+          <label class="choice-item"><input type="radio" name="tone" value="専門的・権威性重視"><span>専門的・権威性重視</span></label>
+          <label class="choice-item"><input type="radio" name="tone" value="おまかせしたい"><span>おまかせしたい</span></label>
+        </div>
+        <p class="error-msg">選択してください</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="field" data-required>
+        <div class="field-label">SNS運用のご経験<span class="tag tag-required">必須</span></div>
+        <div class="choice-group">
+          <label class="choice-item"><input type="radio" name="experience" value="運用経験なし"><span>運用経験なし</span></label>
+          <label class="choice-item"><input type="radio" name="experience" value="自社で運用中（手探り）"><span>自社で運用中（手探り）</span></label>
+          <label class="choice-item"><input type="radio" name="experience" value="自社で運用中（ある程度確立）"><span>自社で運用中（ある程度確立）</span></label>
+          <label class="choice-item"><input type="radio" name="experience" value="外部に委託中"><span>外部に委託中</span></label>
+          <label class="choice-item"><input type="radio" name="experience" value="過去に運用していたが停止中"><span>過去に運用していたが停止中</span></label>
+        </div>
+        <p class="error-msg">選択してください</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field" data-required>
+        <div class="field-label">ご希望の開始時期<span class="tag tag-required">必須</span></div>
+        <div class="choice-group">
+          <label class="choice-item"><input type="radio" name="timeline" value="すぐにでも"><span>すぐにでも</span></label>
+          <label class="choice-item"><input type="radio" name="timeline" value="1ヶ月以内"><span>1ヶ月以内</span></label>
+          <label class="choice-item"><input type="radio" name="timeline" value="3ヶ月以内"><span>3ヶ月以内</span></label>
+          <label class="choice-item"><input type="radio" name="timeline" value="時期未定・情報収集中"><span>時期未定・情報収集中</span></label>
+        </div>
+        <p class="error-msg">選択してください</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field" data-required>
+        <div class="field-label">月額の予算感<span class="tag tag-required">必須</span></div>
+        <div class="choice-group">
+          <label class="choice-item"><input type="radio" name="budget" value="〜10万円"><span>〜10万円</span></label>
+          <label class="choice-item"><input type="radio" name="budget" value="10〜30万円"><span>10〜30万円</span></label>
+          <label class="choice-item"><input type="radio" name="budget" value="30〜50万円"><span>30〜50万円</span></label>
+          <label class="choice-item"><input type="radio" name="budget" value="50万円以上"><span>50万円以上</span></label>
+          <label class="choice-item"><input type="radio" name="budget" value="要相談"><span>要相談</span></label>
+        </div>
+        <p class="error-msg">選択してください</p>
+      </div>
+    </div>
+
+    <!-- Card 4: 自由記述 -->
+    <div class="card">
+      <div class="field">
+        <label for="ngTopics">NGトピック・避けたい内容<span class="tag tag-optional">任意</span></label>
+        <textarea id="ngTopics" name="ngTopics" rows="2" placeholder="発信で触れてほしくないテーマや表現があればご記入ください"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="remarks">その他ご要望・ご質問<span class="tag tag-optional">任意</span></label>
+        <textarea id="remarks" name="remarks" rows="3" placeholder="気になっていること、ご要望などご自由にご記入ください"></textarea>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <div class="submit-area">
+      <button type="submit" class="submit-btn" id="submitBtn">
+        <span class="btn-text">回答を送信する</span>
+        <span class="spinner"></span>
+      </button>
+      <p class="submit-note">送信後、担当者よりご連絡いたします</p>
+    </div>
+
+  </form>
+</main>
+
+<!-- ===== Completion Screen ===== -->
+<div class="completion container" id="completionScreen">
+  <div class="check-circle">
+    <svg viewBox="0 0 24 24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+  </div>
+  <h2>送信が完了しました</h2>
+  <p>ご回答ありがとうございます。<br>内容を確認のうえ、担当者より追ってご連絡いたします。</p>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  &copy; 2025 株式会社SNSの右腕
+</footer>
+
+<script>
+(function () {
+  // ★ ここにデプロイしたGoogle Apps ScriptのウェブアプリURLを貼り付けてください
+  var GAS_URL = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec';
+
+  var form = document.getElementById('hearingForm');
+  var btn = document.getElementById('submitBtn');
+  var formContainer = document.getElementById('formContainer');
+  var completion = document.getElementById('completionScreen');
+  var progressFill = document.getElementById('progressFill');
+
+  // ---------- Progress Bar ----------
+  function updateProgress() {
+    var fields = form.querySelectorAll('.field[data-required]');
+    var filled = 0;
+    for (var i = 0; i < fields.length; i++) {
+      var f = fields[i];
+      var inp = f.querySelector('input[type="text"], input[type="email"], textarea');
+      if (inp && inp.value.trim()) { filled++; continue; }
+      var checked = f.querySelector('input[type="radio"]:checked, input[type="checkbox"]:checked');
+      if (checked) { filled++; }
+    }
+    var pct = Math.round((filled / fields.length) * 100);
+    progressFill.style.width = pct + '%';
+  }
+  form.addEventListener('input', updateProgress);
+  form.addEventListener('change', updateProgress);
+
+  // ---------- Validation ----------
+  function validate() {
+    var valid = true;
+    var errorFields = form.querySelectorAll('.field.error');
+    for (var i = 0; i < errorFields.length; i++) {
+      errorFields[i].classList.remove('error');
+    }
+
+    var requiredFields = form.querySelectorAll('.field[data-required]');
+    for (var i = 0; i < requiredFields.length; i++) {
+      var field = requiredFields[i];
+
+      // Text / email inputs
+      var input = field.querySelector('input[type="text"], input[type="email"]');
+      if (input && !input.value.trim()) {
+        field.classList.add('error');
+        valid = false;
+        continue;
+      }
+
+      // Email format check
+      var emailInput = field.querySelector('input[type="email"]');
+      if (emailInput && emailInput.value.trim()) {
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput.value.trim())) {
+          field.classList.add('error');
+          field.querySelector('.error-msg').textContent = '正しいメールアドレスを入力してください';
+          valid = false;
+          continue;
+        }
+      }
+
+      // Checkbox group
+      var checkboxes = field.querySelectorAll('input[type="checkbox"]');
+      if (checkboxes.length > 0) {
+        var checked = false;
+        for (var j = 0; j < checkboxes.length; j++) {
+          if (checkboxes[j].checked) { checked = true; break; }
+        }
+        if (!checked) { field.classList.add('error'); valid = false; }
+      }
+
+      // Radio group
+      var radios = field.querySelectorAll('input[type="radio"]');
+      if (radios.length > 0) {
+        var selected = false;
+        for (var j = 0; j < radios.length; j++) {
+          if (radios[j].checked) { selected = true; break; }
+        }
+        if (!selected) { field.classList.add('error'); valid = false; }
+      }
+    }
+    return valid;
+  }
+
+  // ---------- Collect form data ----------
+  function collectData() {
+    var purposeEls = form.querySelectorAll('input[name="purpose"]:checked');
+    var purposes = [];
+    for (var i = 0; i < purposeEls.length; i++) purposes.push(purposeEls[i].value);
+
+    var radio = function (name) {
+      var el = form.querySelector('input[name="' + name + '"]:checked');
+      return el ? el.value : '';
+    };
+
+    return {
+      companyName: form.companyName.value.trim(),
+      contactName: form.contactName.value.trim(),
+      email: form.email.value.trim(),
+      serviceUrl: form.serviceUrl.value.trim(),
+      xAccount: form.xAccount.value.trim(),
+      otherSns: form.otherSns.value.trim(),
+      competitors: form.competitors.value.trim(),
+      purpose: purposes.join(', '),
+      product: form.product.value.trim(),
+      target: form.target.value.trim(),
+      tone: radio('tone'),
+      experience: radio('experience'),
+      timeline: radio('timeline'),
+      budget: radio('budget'),
+      ngTopics: form.ngTopics.value.trim(),
+      remarks: form.remarks.value.trim()
+    };
+  }
+
+  // ---------- Submit ----------
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!validate()) {
+      var firstError = form.querySelector('.field.error');
+      if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    btn.classList.add('loading');
+    btn.disabled = true;
+
+    fetch(GAS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(collectData())
+    })
+    .then(function () {
+      formContainer.style.display = 'none';
+      document.querySelector('.hero').style.display = 'none';
+      document.getElementById('progressBar').style.display = 'none';
+      completion.classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    })
+    .catch(function () {
+      alert('送信中にエラーが発生しました。お手数ですが、時間をおいて再度お試しください。');
+      btn.classList.remove('loading');
+      btn.disabled = false;
+    });
+  });
+})();
+</script>
+</body>
+</html>
