@@ -10,7 +10,7 @@
  *     - シート1行目にヘッダーを入れておく（自動で書き込まれるが推奨）:
  *       タイムスタンプ | 会社名 | 担当者名 | メールアドレス |
  *       サービスURL | Xアカウント | その他SNS | 競合企業 |
- *       運用目的 | 商品・サービス | ターゲット | トーン |
+ *       運用目的 | 商品・サービス | ターゲット |
  *       SNS運用経験 | 希望時期 | 予算感 | NGトピック | 備考
  *
  *  2. スプレッドシートのメニュー「拡張機能 → Apps Script」を開く
@@ -83,7 +83,6 @@ function writeToSheet(data) {
     data.purpose      || '',   // 運用目的
     data.product      || '',   // 商品・サービス
     data.target       || '',   // ターゲット
-    data.tone         || '',   // トーン
     data.experience   || '',   // SNS運用経験
     data.timeline     || '',   // 希望時期
     data.budget       || '',   // 予算感
@@ -113,7 +112,6 @@ function notifySlack(data) {
     '*運用目的:* ' + (data.purpose || '—'),
     '*商品・サービス:* ' + (data.product || '—'),
     '*ターゲット:* ' + (data.target || '—'),
-    '*トーン:* ' + (data.tone || '—'),
     '',
     '───── 温度感 ─────',
     '*SNS運用経験:* ' + (data.experience || '—'),

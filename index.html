@@ -534,16 +534,6 @@ body {
         <textarea id="target" name="target" rows="2" placeholder="例：30代男性の経営者、IT企業のマーケティング担当者 など"></textarea>
       </div>
 
-      <div class="field" data-required>
-        <div class="field-label">発信のトーン・雰囲気<span class="tag tag-required">必須</span></div>
-        <div class="choice-group">
-          <label class="choice-item"><input type="radio" name="tone" value="ビジネス・フォーマル"><span>ビジネス・フォーマル</span></label>
-          <label class="choice-item"><input type="radio" name="tone" value="親しみやすい・カジュアル"><span>親しみやすい・カジュアル</span></label>
-          <label class="choice-item"><input type="radio" name="tone" value="専門的・権威性重視"><span>専門的・権威性重視</span></label>
-          <label class="choice-item"><input type="radio" name="tone" value="おまかせしたい"><span>おまかせしたい</span></label>
-        </div>
-        <p class="error-msg">選択してください</p>
-      </div>
     </div>
 
     <!-- Card 3 -->
@@ -734,7 +724,6 @@ body {
       purpose: purposes.join(', '),
       product: form.product.value.trim(),
       target: form.target.value.trim(),
-      tone: radio('tone'),
       experience: radio('experience'),
       timeline: radio('timeline'),
       budget: radio('budget'),
