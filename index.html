@@ -462,7 +462,7 @@ body {
 <main class="container" id="formContainer">
   <form id="hearingForm" novalidate>
 
-    <!-- Card 1 -->
+    <!-- Card 1: 基本情報 -->
     <div class="card">
       <div class="field" data-required>
         <label for="companyName">会社名<span class="tag tag-required">必須</span></label>
@@ -480,6 +480,24 @@ body {
         <label for="email">メールアドレス<span class="tag tag-required">必須</span></label>
         <input type="email" id="email" name="email" placeholder="example@company.co.jp">
         <p class="error-msg">メールアドレスを入力してください</p>
+      </div>
+
+      <div class="field" data-required>
+        <label for="business">事業内容<span class="tag tag-required">必須</span></label>
+        <textarea id="business" name="business" rows="2" placeholder="例：法人向けSaaSの開発・販売、飲食店の運営 など"></textarea>
+        <p class="error-msg">事業内容を入力してください</p>
+      </div>
+
+      <div class="field" data-required>
+        <div class="field-label">従業員数<span class="tag tag-required">必須</span></div>
+        <div class="choice-group">
+          <label class="choice-item"><input type="radio" name="employees" value="1〜5名"><span>1〜5名</span></label>
+          <label class="choice-item"><input type="radio" name="employees" value="6〜30名"><span>6〜30名</span></label>
+          <label class="choice-item"><input type="radio" name="employees" value="31〜100名"><span>31〜100名</span></label>
+          <label class="choice-item"><input type="radio" name="employees" value="101〜300名"><span>101〜300名</span></label>
+          <label class="choice-item"><input type="radio" name="employees" value="301名以上"><span>301名以上</span></label>
+        </div>
+        <p class="error-msg">選択してください</p>
       </div>
 
       <div class="divider"></div>
@@ -506,7 +524,7 @@ body {
       </div>
     </div>
 
-    <!-- Card 2 -->
+    <!-- Card 2: 方向性 -->
     <div class="card">
       <div class="field" data-required>
         <div class="field-label">X運用の目的<span class="tag tag-required">必須</span></div>
@@ -533,13 +551,12 @@ body {
         <label for="target">ターゲットイメージ<span class="tag tag-optional">任意</span></label>
         <textarea id="target" name="target" rows="2" placeholder="例：30代男性の経営者、IT企業のマーケティング担当者 など"></textarea>
       </div>
-
     </div>
 
-    <!-- Card 3 -->
+    <!-- Card 3: 現状・ご相談内容 -->
     <div class="card">
       <div class="field" data-required>
-        <div class="field-label">SNS運用のご経験<span class="tag tag-required">必須</span></div>
+        <div class="field-label">X運用のご経験<span class="tag tag-required">必須</span></div>
         <div class="choice-group">
           <label class="choice-item"><input type="radio" name="experience" value="運用経験なし"><span>運用経験なし</span></label>
           <label class="choice-item"><input type="radio" name="experience" value="自社で運用中（手探り）"><span>自社で運用中（手探り）</span></label>
@@ -552,21 +569,47 @@ body {
 
       <div class="divider"></div>
 
+      <div class="field">
+        <label for="challenges">現在、X運用で感じている課題<span class="tag tag-optional">任意</span></label>
+        <textarea id="challenges" name="challenges" rows="3" placeholder="例：フォロワーが伸びない、投稿のネタが続かない、エンゲージメントが低い、運用に割ける時間がない など"></textarea>
+        <p class="hint">些細なことでも構いません。当日のお打ち合わせに活かします</p>
+      </div>
+
+      <div class="field">
+        <label for="consultation">当日、特にご相談したいこと<span class="tag tag-optional">任意</span></label>
+        <textarea id="consultation" name="consultation" rows="3" placeholder="例：アカウントの方向性、投稿頻度の目安、他社の成功事例を聞きたい など"></textarea>
+      </div>
+    </div>
+
+    <!-- Card 4: サービスご紹介・外注検討の方へ -->
+    <div class="card">
       <div class="field" data-required>
-        <div class="field-label">ご希望の開始時期<span class="tag tag-required">必須</span></div>
+        <div class="field-label">当日、弊社のX運用サービスについてもご紹介させていただいてよろしいですか？<span class="tag tag-required">必須</span></div>
+        <p class="hint" style="margin-bottom:10px;">ご相談のみのお打ち合わせも歓迎です。お気軽にお選びください</p>
         <div class="choice-group">
-          <label class="choice-item"><input type="radio" name="timeline" value="すぐにでも"><span>すぐにでも</span></label>
-          <label class="choice-item"><input type="radio" name="timeline" value="1ヶ月以内"><span>1ヶ月以内</span></label>
-          <label class="choice-item"><input type="radio" name="timeline" value="3ヶ月以内"><span>3ヶ月以内</span></label>
-          <label class="choice-item"><input type="radio" name="timeline" value="時期未定・情報収集中"><span>時期未定・情報収集中</span></label>
+          <label class="choice-item"><input type="radio" name="serviceIntro" value="ぜひ聞きたい"><span>ぜひ聞きたい</span></label>
+          <label class="choice-item"><input type="radio" name="serviceIntro" value="軽く紹介してもらえればOK"><span>軽く紹介してもらえればOK</span></label>
+          <label class="choice-item"><input type="radio" name="serviceIntro" value="まずは相談のみ希望"><span>まずは相談のみ希望</span></label>
         </div>
         <p class="error-msg">選択してください</p>
       </div>
 
       <div class="divider"></div>
 
-      <div class="field" data-required>
-        <div class="field-label">月額の予算感<span class="tag tag-required">必須</span></div>
+      <p class="hint" style="margin-bottom:16px;">以下は、運用の外注をご検討中の方のみお答えください</p>
+
+      <div class="field">
+        <div class="field-label">ご希望の開始時期<span class="tag tag-optional">任意</span></div>
+        <div class="choice-group">
+          <label class="choice-item"><input type="radio" name="timeline" value="すぐにでも"><span>すぐにでも</span></label>
+          <label class="choice-item"><input type="radio" name="timeline" value="1ヶ月以内"><span>1ヶ月以内</span></label>
+          <label class="choice-item"><input type="radio" name="timeline" value="3ヶ月以内"><span>3ヶ月以内</span></label>
+          <label class="choice-item"><input type="radio" name="timeline" value="時期未定・情報収集中"><span>時期未定・情報収集中</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">月間のご予算<span class="tag tag-optional">任意</span></div>
         <div class="choice-group">
           <label class="choice-item"><input type="radio" name="budget" value="〜10万円"><span>〜10万円</span></label>
           <label class="choice-item"><input type="radio" name="budget" value="10〜30万円"><span>10〜30万円</span></label>
@@ -574,17 +617,11 @@ body {
           <label class="choice-item"><input type="radio" name="budget" value="50万円以上"><span>50万円以上</span></label>
           <label class="choice-item"><input type="radio" name="budget" value="要相談"><span>要相談</span></label>
         </div>
-        <p class="error-msg">選択してください</p>
       </div>
     </div>
 
-    <!-- Card 4: 自由記述 -->
+    <!-- Card 5: その他 -->
     <div class="card">
-      <div class="field">
-        <label for="ngTopics">NGトピック・避けたい内容<span class="tag tag-optional">任意</span></label>
-        <textarea id="ngTopics" name="ngTopics" rows="2" placeholder="発信で触れてほしくないテーマや表現があればご記入ください"></textarea>
-      </div>
-
       <div class="field">
         <label for="remarks">その他ご要望・ご質問<span class="tag tag-optional">任意</span></label>
         <textarea id="remarks" name="remarks" rows="3" placeholder="気になっていること、ご要望などご自由にご記入ください"></textarea>
@@ -717,6 +754,8 @@ body {
       companyName: form.companyName.value.trim(),
       contactName: form.contactName.value.trim(),
       email: form.email.value.trim(),
+      business: form.business.value.trim(),
+      employees: radio('employees'),
       serviceUrl: form.serviceUrl.value.trim(),
       xAccount: form.xAccount.value.trim(),
       otherSns: form.otherSns.value.trim(),
@@ -725,9 +764,11 @@ body {
       product: form.product.value.trim(),
       target: form.target.value.trim(),
       experience: radio('experience'),
+      challenges: form.challenges.value.trim(),
+      consultation: form.consultation.value.trim(),
+      serviceIntro: radio('serviceIntro'),
       timeline: radio('timeline'),
       budget: radio('budget'),
-      ngTopics: form.ngTopics.value.trim(),
       remarks: form.remarks.value.trim()
     };
   }
