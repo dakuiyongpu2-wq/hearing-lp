@@ -3,477 +3,647 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>事前ヒアリングシート | 株式会社SNSの右腕</title>
+<title>X運用 資料請求・個別相談 | 株式会社SNSの右腕</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --blue-900: #0c1d3a;
-  --blue-800: #102a50;
-  --blue-700: #1a3a6b;
-  --blue-600: #2553a0;
-  --blue-500: #2d6cdf;
-  --blue-400: #4a8af5;
-  --blue-300: #7db0ff;
-  --blue-100: #dce9ff;
-  --blue-50: #f0f5ff;
-  --gray-900: #111827;
-  --gray-700: #374151;
-  --gray-500: #6b7280;
-  --gray-400: #9ca3af;
-  --gray-300: #d1d5db;
-  --gray-200: #e5e7eb;
-  --gray-100: #f3f4f6;
-  --gray-50: #f9fafb;
-  --white: #fff;
-  --red: #dc2626;
+  --primary-900: #020617;
+  --primary-800: #0f172a;
+  --primary-700: #1e293b;
+  --primary-600: #1e40af;
+  --primary-500: #2563eb;
+  --primary-400: #3b82f6;
+  --primary-300: #60a5fa;
+  --primary-200: #93c5fd;
+  --primary-100: #dbeafe;
+  --primary-50: #eff6ff;
+  --gray-900: #0f172a;
+  --gray-800: #1e293b;
+  --gray-700: #334155;
+  --gray-600: #475569;
+  --gray-500: #64748b;
+  --gray-400: #94a3b8;
+  --gray-300: #cbd5e1;
+  --gray-200: #e2e8f0;
+  --gray-100: #f1f5f9;
+  --gray-50: #f8fafc;
+  --white: #ffffff;
+  --red-500: #ef4444;
+  --green-500: #22c55e;
+  --radius-lg: 16px;
   --radius: 12px;
   --radius-sm: 8px;
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-  --shadow: 0 4px 24px rgba(0,0,0,0.06);
-  --shadow-lg: 0 12px 40px rgba(0,0,0,0.1);
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
-    "Noto Sans JP", sans-serif;
-  background: var(--gray-50);
+  font-family: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f0f2f5;
   color: var(--gray-900);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 /* ── Hero ── */
 .hero {
-  background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 50%, var(--blue-600) 100%);
+  background: var(--primary-900);
   color: var(--white);
   text-align: center;
-  padding: 48px 20px 56px;
+  padding: 36px 20px 40px;
   position: relative;
   overflow: hidden;
 }
 .hero::before {
   content: '';
   position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(45,108,223,0.25) 0%, transparent 70%);
-  border-radius: 50%;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 0%, rgba(37,99,235,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 100%, rgba(99,102,241,0.1) 0%, transparent 60%);
 }
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -40%;
-  left: -10%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(77,138,245,0.15) 0%, transparent 70%);
-  border-radius: 50%;
-}
-.hero-inner {
-  position: relative;
-  z-index: 1;
-}
+.hero-inner { position: relative; z-index: 1; }
 .hero-company {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  color: var(--blue-300);
-  margin-bottom: 24px;
-}
-.hero-company .logo-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 6px;
-  backdrop-filter: blur(4px);
-}
-.hero-company .logo-mark svg {
-  width: 16px;
-  height: 16px;
-  fill: var(--blue-300);
-}
-.hero-badge {
-  display: inline-block;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  border: 1px solid rgba(125,176,255,0.3);
-  background: rgba(125,176,255,0.08);
-  border-radius: 100px;
-  padding: 5px 18px;
+  letter-spacing: 0.1em;
+  color: var(--gray-400);
   margin-bottom: 20px;
-  color: var(--blue-300);
 }
 .hero h1 {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 800;
-  line-height: 1.45;
-  margin-bottom: 14px;
-  letter-spacing: -0.01em;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--white) 0%, var(--primary-200) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .hero-desc {
-  font-size: 14px;
-  color: rgba(255,255,255,0.65);
-  max-width: 480px;
-  margin: 0 auto 28px;
-  line-height: 1.8;
-}
-.hero-time {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   font-size: 13px;
-  color: rgba(255,255,255,0.5);
-  background: rgba(255,255,255,0.06);
-  border-radius: 100px;
-  padding: 6px 16px;
-}
-.hero-time svg {
-  width: 14px;
-  height: 14px;
-  stroke: rgba(255,255,255,0.5);
-  fill: none;
+  color: var(--gray-400);
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
-/* ── Progress Bar ── */
-.progress-bar {
+/* ── Progress ── */
+.progress-section {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--white);
-  border-bottom: 1px solid var(--gray-200);
-  padding: 0;
-  box-shadow: var(--shadow-sm);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
-.progress-track {
-  height: 3px;
+.progress-inner {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.progress-info {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gray-500);
+  white-space: nowrap;
+  min-width: 72px;
+}
+.progress-info span { color: var(--primary-500); }
+.progress-bar-wrapper {
+  flex: 1;
+  height: 6px;
   background: var(--gray-200);
+  border-radius: 100px;
+  overflow: hidden;
 }
-.progress-fill {
+.progress-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--blue-500), var(--blue-400));
-  width: 0%;
-  transition: width 0.4s ease;
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-300));
+  width: 25%;
+  border-radius: 100px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.progress-pct {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-500);
+  min-width: 32px;
+  text-align: right;
 }
 
 /* ── Container ── */
 .container {
-  max-width: 640px;
+  max-width: 540px;
   margin: 0 auto;
-  padding: 0 16px 80px;
+  padding: 0 16px 100px;
+}
+
+/* ── Step panels ── */
+.step-panel {
+  display: none;
+  animation: fadeUp 0.35s ease;
+}
+.step-panel.active { display: block; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Step indicator (inside card) ── */
+.step-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-500);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.step-tag::before {
+  content: '';
+  width: 16px;
+  height: 2px;
+  background: var(--primary-500);
+  border-radius: 2px;
 }
 
 /* ── Card ── */
 .card {
   background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 28px 24px;
-  margin-top: 24px;
-  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow), 0 0 0 1px rgba(0,0,0,0.03);
+  padding: 28px 22px;
+  margin-top: 20px;
+}
+.card-header {
+  margin-bottom: 24px;
+}
+.card-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+.card-header p {
+  font-size: 13px;
+  color: var(--gray-500);
+  line-height: 1.6;
 }
 
-/* ── Divider ── */
-.divider {
-  height: 1px;
-  background: var(--gray-200);
-  margin: 28px 0;
+/* ── CTA Selection (Step 1) ── */
+.cta-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cta-option {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  background: var(--white);
+}
+.cta-option:hover {
+  border-color: var(--primary-300);
+  background: var(--primary-50);
+}
+.cta-option.selected {
+  border-color: var(--primary-500);
+  background: var(--primary-50);
+  box-shadow: 0 0 0 1px var(--primary-500), 0 4px 12px rgba(37,99,235,0.1);
+}
+.cta-option input { display: none; }
+.cta-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cta-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.8;
+  fill: none;
+}
+.cta-option-consultation .cta-icon {
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-400));
+}
+.cta-option-consultation .cta-icon svg { stroke: var(--white); }
+.cta-option-document .cta-icon {
+  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+}
+.cta-option-document .cta-icon svg { stroke: var(--white); }
+.cta-text h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 2px;
+}
+.cta-text p {
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+.cta-recommend {
+  position: absolute;
+  top: -9px;
+  right: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-400));
+  color: var(--white);
+  padding: 2px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.04em;
 }
 
 /* ── Form Fields ── */
-.field {
-  margin-bottom: 24px;
-}
-.field:last-child {
-  margin-bottom: 0;
-}
+.field { margin-bottom: 20px; }
+.field:last-child { margin-bottom: 0; }
 .field > label,
 .field > .field-label {
   display: block;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   margin-bottom: 6px;
   color: var(--gray-700);
 }
-.field .tag {
+.tag {
   display: inline-block;
   font-size: 10px;
   font-weight: 700;
-  padding: 2px 7px;
+  padding: 1px 6px;
   border-radius: 4px;
   margin-left: 6px;
   vertical-align: middle;
   position: relative;
   top: -1px;
 }
-.tag-required {
-  background: var(--red);
-  color: var(--white);
-}
-.tag-optional {
-  background: var(--gray-200);
-  color: var(--gray-500);
-}
+.tag-required { background: var(--red-500); color: var(--white); }
+.tag-optional { background: var(--gray-100); color: var(--gray-400); }
+
 .field input[type="text"],
 .field input[type="url"],
 .field input[type="email"],
+.field input[type="tel"],
+.field select,
 .field textarea {
   width: 100%;
-  padding: 11px 14px;
+  padding: 10px 14px;
   font-size: 15px;
-  border: 1.5px solid var(--gray-300);
+  border: 1.5px solid var(--gray-200);
   border-radius: var(--radius-sm);
-  background: var(--white);
+  background: var(--gray-50);
   color: var(--gray-900);
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: all var(--transition);
   font-family: inherit;
+  appearance: none;
 }
 .field input::placeholder,
-.field textarea::placeholder {
-  color: var(--gray-400);
-}
+.field textarea::placeholder { color: var(--gray-400); }
 .field input:focus,
-.field textarea:focus {
+.field textarea:focus,
+.field select:focus {
   outline: none;
-  border-color: var(--blue-500);
-  box-shadow: 0 0 0 3px rgba(45,108,223,0.1);
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.08);
+  background: var(--white);
 }
-.field textarea {
-  resize: vertical;
-  min-height: 88px;
-}
+.field textarea { resize: vertical; min-height: 76px; }
 .field .hint {
   font-size: 12px;
-  color: var(--gray-500);
-  margin-top: 5px;
+  color: var(--gray-400);
+  margin-top: 4px;
   line-height: 1.5;
 }
 
-/* ── Choice Group (radio/checkbox) ── */
+/* ── Choice Group ── */
 .choice-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 .choice-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
-  padding: 11px 14px;
-  border: 1.5px solid var(--gray-300);
+  padding: 10px 14px;
+  border: 1.5px solid var(--gray-200);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
-  color: var(--gray-700);
+  transition: all var(--transition);
+  color: var(--gray-600);
   user-select: none;
+  background: var(--gray-50);
 }
 .choice-item:hover {
-  background: var(--blue-50);
-  border-color: var(--blue-300);
+  background: var(--primary-50);
+  border-color: var(--primary-300);
+  color: var(--gray-900);
 }
 .choice-item:has(input:checked) {
-  background: var(--blue-50);
-  border-color: var(--blue-500);
-  color: var(--blue-900);
-  box-shadow: 0 0 0 1px var(--blue-500);
+  background: var(--primary-50);
+  border-color: var(--primary-500);
+  color: var(--primary-900);
+  box-shadow: 0 0 0 1px var(--primary-500);
 }
 .choice-item input[type="radio"],
 .choice-item input[type="checkbox"] {
-  accent-color: var(--blue-500);
-  width: 18px;
-  height: 18px;
+  accent-color: var(--primary-500);
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
 }
 
-/* ── Submit ── */
-.submit-area {
-  margin-top: 32px;
-  text-align: center;
+/* ── Two column fields ── */
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
-.submit-btn {
+
+/* ── Buttons ── */
+.btn-area {
+  margin-top: 28px;
+  display: flex;
+  gap: 10px;
+}
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 100%;
-  max-width: 400px;
-  padding: 16px 32px;
-  font-size: 16px;
+  padding: 13px 28px;
+  font-size: 14px;
   font-weight: 700;
-  color: var(--white);
-  background: linear-gradient(135deg, var(--blue-600), var(--blue-500));
   border: none;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: box-shadow 0.2s, transform 0.1s;
-  box-shadow: 0 4px 16px rgba(45,108,223,0.3);
+  transition: all var(--transition);
   font-family: inherit;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
+  flex: 1;
 }
-.submit-btn:hover {
-  box-shadow: 0 6px 24px rgba(45,108,223,0.4);
+.btn-primary {
+  color: var(--white);
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-500));
+  box-shadow: 0 2px 8px rgba(37,99,235,0.25);
 }
-.submit-btn:active {
-  transform: scale(0.98);
+.btn-primary:hover {
+  box-shadow: 0 4px 16px rgba(37,99,235,0.35);
+  transform: translateY(-1px);
 }
-.submit-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+.btn-primary:active { transform: translateY(0); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.btn-secondary {
+  color: var(--gray-500);
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  flex: 0 0 auto;
+  padding: 13px 20px;
 }
-.submit-btn .spinner {
+.btn-secondary:hover { background: var(--gray-50); border-color: var(--gray-300); color: var(--gray-700); }
+.btn .spinner {
   display: none;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border: 2px solid rgba(255,255,255,0.3);
   border-top-color: var(--white);
   border-radius: 50%;
   animation: spin 0.6s linear infinite;
 }
-.submit-btn.loading .spinner { display: block; }
-.submit-btn.loading .btn-text { display: none; }
+.btn.loading .spinner { display: block; }
+.btn.loading .btn-text { display: none; }
 @keyframes spin { to { transform: rotate(360deg); } }
-.submit-note {
-  font-size: 12px;
-  color: var(--gray-400);
-  margin-top: 12px;
-}
 
 /* ── Error ── */
 .field.error input,
-.field.error textarea {
-  border-color: var(--red);
-  box-shadow: 0 0 0 3px rgba(220,38,38,0.08);
+.field.error textarea,
+.field.error select {
+  border-color: var(--red-500);
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.06);
 }
 .field.error .choice-group {
   border-radius: var(--radius-sm);
-  outline: 2px solid rgba(220,38,38,0.3);
+  outline: 2px solid rgba(239,68,68,0.2);
   outline-offset: 4px;
 }
 .field .error-msg {
   display: none;
   font-size: 12px;
-  color: var(--red);
-  margin-top: 5px;
+  color: var(--red-500);
+  margin-top: 4px;
 }
-.field.error .error-msg {
-  display: block;
-}
+.field.error .error-msg { display: block; }
 
-/* ── Completion Screen ── */
+/* ── Completion ── */
 .completion {
   display: none;
   text-align: center;
   padding: 80px 20px 40px;
 }
-.completion.show {
-  display: block;
-}
-.check-circle {
-  width: 72px;
-  height: 72px;
-  background: linear-gradient(135deg, var(--blue-500), var(--blue-400));
+.completion.show { display: block; }
+.completion-icon {
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 28px;
-  box-shadow: 0 8px 32px rgba(45,108,223,0.25);
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--green-500), #4ade80);
+  box-shadow: 0 8px 24px rgba(34,197,94,0.2);
 }
-.check-circle svg {
-  width: 32px;
-  height: 32px;
+.completion-icon svg {
+  width: 28px;
+  height: 28px;
   stroke: var(--white);
   fill: none;
 }
 .completion h2 {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--gray-900);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
 }
 .completion p {
   font-size: 14px;
   color: var(--gray-500);
-  max-width: 400px;
+  max-width: 380px;
   margin: 0 auto;
   line-height: 1.8;
 }
 
+/* ── Calendar embed ── */
+.calendar-wrapper {
+  margin-top: 20px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+  background: var(--gray-50);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calendar-placeholder {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--gray-400);
+}
+.calendar-placeholder svg {
+  width: 40px;
+  height: 40px;
+  stroke: var(--gray-300);
+  fill: none;
+  margin-bottom: 12px;
+}
+.calendar-placeholder p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ── Divider ── */
+.divider { height: 1px; background: var(--gray-100); margin: 22px 0; }
+
 /* ── Footer ── */
 .footer {
   text-align: center;
-  padding: 32px 20px;
-  font-size: 12px;
+  padding: 24px 20px;
+  font-size: 11px;
   color: var(--gray-400);
+  letter-spacing: 0.02em;
 }
 
 /* ── Responsive ── */
 @media (min-width: 640px) {
-  .hero { padding: 64px 20px 72px; }
-  .hero h1 { font-size: 32px; }
-  .card { padding: 36px 32px; margin-top: 28px; }
-  .container { padding: 0 20px 80px; }
+  .hero { padding: 48px 20px 52px; }
+  .hero h1 { font-size: 28px; }
+  .card { padding: 32px 28px; margin-top: 24px; }
+  .container { padding: 0 20px 100px; }
+  .cta-options { flex-direction: row; }
+  .cta-option { flex: 1; flex-direction: column; align-items: center; text-align: center; padding: 24px 20px; }
 }
 </style>
 </head>
 <body>
 
 <!-- ===== Hero ===== -->
-<header class="hero">
+<header class="hero" id="heroSection">
   <div class="hero-inner">
-    <div class="hero-company">
-      <span class="logo-mark">
-        <svg viewBox="0 0 24 24"><path d="M13.5 2L3 14h9l-1.5 8L21 10h-9l1.5-8z"/></svg>
-      </span>
-      株式会社SNSの右腕
-    </div>
-    <div class="hero-badge">Hearing Sheet</div>
-    <h1>X運用 事前ヒアリングシート</h1>
+    <div class="hero-company">株式会社SNSの右腕</div>
+    <h1>X運用支援<br>資料請求・個別相談</h1>
     <p class="hero-desc">
-      ご回答いただいた内容をもとに、<br>
-      貴社に最適なX運用プランをご提案いたします。
+      貴社に最適なX運用プランをご提案します。<br>
+      まずはお気軽にお問い合わせください。
     </p>
-    <span class="hero-time">
-      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      所要時間 約3〜5分
-    </span>
   </div>
 </header>
 
-<!-- ===== Progress Bar ===== -->
-<div class="progress-bar" id="progressBar">
-  <div class="progress-track">
-    <div class="progress-fill" id="progressFill"></div>
+<!-- ===== Progress ===== -->
+<div class="progress-section" id="progressSection">
+  <div class="progress-inner">
+    <div class="progress-info">STEP <span id="currentStepNum">1</span> / <span id="totalStepNum">3</span></div>
+    <div class="progress-bar-wrapper">
+      <div class="progress-bar-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-pct" id="progressPct">33%</div>
   </div>
 </div>
 
 <!-- ===== Form ===== -->
 <main class="container" id="formContainer">
-  <form id="hearingForm" novalidate>
 
-    <!-- Card 1: 基本情報 -->
+  <!-- ==================== STEP 1: CTA選択 ==================== -->
+  <div class="step-panel active" id="step1">
     <div class="card">
-      <div class="field" data-required>
-        <label for="companyName">会社名<span class="tag tag-required">必須</span></label>
-        <input type="text" id="companyName" name="companyName" placeholder="例：株式会社〇〇">
-        <p class="error-msg">会社名を入力してください</p>
+      <div class="step-tag">Step 1</div>
+      <div class="card-header">
+        <h2>お問い合わせ内容の選択</h2>
+        <p>ご希望の内容をお選びください</p>
+      </div>
+      <div class="cta-options" id="ctaOptions">
+        <label class="cta-option cta-option-consultation" data-value="個別相談">
+          <input type="radio" name="ctaType" value="個別相談">
+          <div class="cta-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2"/><rect width="18" height="18" x="3" y="4" rx="2"/><circle cx="12" cy="10" r="2"/><line x1="8" x2="8" y1="2" y2="4"/><line x1="16" x2="16" y1="2" y2="4"/></svg>
+          </div>
+          <div class="cta-text">
+            <h3>個別相談（無料）</h3>
+            <p>X運用の課題をヒアリングし、最適なプランをご提案します</p>
+          </div>
+          <span class="cta-recommend">おすすめ</span>
+        </label>
+        <label class="cta-option cta-option-document" data-value="資料請求">
+          <input type="radio" name="ctaType" value="資料請求">
+          <div class="cta-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          </div>
+          <div class="cta-text">
+            <h3>資料請求</h3>
+            <p>サービス概要・料金プラン・実績をまとめた資料をお送りします</p>
+          </div>
+        </label>
+      </div>
+      <div class="field error-cta" style="margin-top:8px;margin-bottom:0;">
+        <p class="error-msg">お問い合わせ内容を選択してください</p>
+      </div>
+      <div class="btn-area">
+        <button type="button" class="btn btn-primary" id="step1Next">
+          <span class="btn-text">次へ進む</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== STEP 2: MQL情報取得 ==================== -->
+  <div class="step-panel" id="step2">
+    <div class="card">
+      <div class="step-tag">Step 2</div>
+      <div class="card-header">
+        <h2>基本情報</h2>
+        <p>貴社の情報をご入力ください</p>
       </div>
 
-      <div class="field" data-required>
-        <label for="contactName">ご担当者名<span class="tag tag-required">必須</span></label>
-        <input type="text" id="contactName" name="contactName" placeholder="例：山田 太郎">
-        <p class="error-msg">ご担当者名を入力してください</p>
+      <div class="field-row">
+        <div class="field" data-required>
+          <label for="lastName">姓<span class="tag tag-required">必須</span></label>
+          <input type="text" id="lastName" name="lastName" placeholder="山田">
+          <p class="error-msg">姓を入力してください</p>
+        </div>
+        <div class="field" data-required>
+          <label for="firstName">名<span class="tag tag-required">必須</span></label>
+          <input type="text" id="firstName" name="firstName" placeholder="太郎">
+          <p class="error-msg">名を入力してください</p>
+        </div>
       </div>
 
       <div class="field" data-required>
@@ -483,17 +653,36 @@ body {
       </div>
 
       <div class="field" data-required>
-        <label for="business">事業内容<span class="tag tag-required">必須</span></label>
-        <textarea id="business" name="business" rows="2" placeholder="例：法人向けSaaSの開発・販売、飲食店の運営 など"></textarea>
-        <p class="error-msg">事業内容を入力してください</p>
+        <label for="phone">電話番号<span class="tag tag-required">必須</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="03-1234-5678">
+        <p class="error-msg">電話番号を入力してください</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field" data-required>
+        <label for="companyName">企業名<span class="tag tag-required">必須</span></label>
+        <input type="text" id="companyName" name="companyName" placeholder="株式会社〇〇">
+        <p class="error-msg">企業名を入力してください</p>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="department">部署名<span class="tag tag-optional">任意</span></label>
+          <input type="text" id="department" name="department" placeholder="マーケティング部">
+        </div>
+        <div class="field">
+          <label for="jobTitle">役職名<span class="tag tag-optional">任意</span></label>
+          <input type="text" id="jobTitle" name="jobTitle" placeholder="部長">
+        </div>
       </div>
 
       <div class="field" data-required>
         <div class="field-label">従業員数<span class="tag tag-required">必須</span></div>
         <div class="choice-group">
-          <label class="choice-item"><input type="radio" name="employees" value="1〜5名"><span>1〜5名</span></label>
-          <label class="choice-item"><input type="radio" name="employees" value="6〜30名"><span>6〜30名</span></label>
-          <label class="choice-item"><input type="radio" name="employees" value="31〜100名"><span>31〜100名</span></label>
+          <label class="choice-item"><input type="radio" name="employees" value="1〜10名"><span>1〜10名</span></label>
+          <label class="choice-item"><input type="radio" name="employees" value="11〜50名"><span>11〜50名</span></label>
+          <label class="choice-item"><input type="radio" name="employees" value="51〜100名"><span>51〜100名</span></label>
           <label class="choice-item"><input type="radio" name="employees" value="101〜300名"><span>101〜300名</span></label>
           <label class="choice-item"><input type="radio" name="employees" value="301名以上"><span>301名以上</span></label>
         </div>
@@ -502,9 +691,39 @@ body {
 
       <div class="divider"></div>
 
+      <div class="field" data-required>
+        <div class="field-label">検討状況<span class="tag tag-required">必須</span></div>
+        <div class="choice-group">
+          <label class="choice-item"><input type="radio" name="consideration" value="すぐに導入したい"><span>すぐに導入したい</span></label>
+          <label class="choice-item"><input type="radio" name="consideration" value="1〜3ヶ月以内に検討"><span>1〜3ヶ月以内に検討</span></label>
+          <label class="choice-item"><input type="radio" name="consideration" value="情報収集段階"><span>情報収集段階</span></label>
+          <label class="choice-item"><input type="radio" name="consideration" value="まだ決まっていない"><span>まだ決まっていない</span></label>
+        </div>
+        <p class="error-msg">選択してください</p>
+      </div>
+
+      <div class="btn-area">
+        <button type="button" class="btn btn-secondary" id="step2Back">戻る</button>
+        <button type="button" class="btn btn-primary" id="step2Next">
+          <span class="btn-text">次へ進む</span>
+          <span class="spinner"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== STEP 3: ヒアリング（個別相談のみ） ==================== -->
+  <div class="step-panel" id="step3">
+    <div class="card">
+      <div class="step-tag">Step 3</div>
+      <div class="card-header">
+        <h2>ヒアリング</h2>
+        <p>より最適なご提案のために、いくつかお伺いします</p>
+      </div>
+
       <div class="field">
-        <label for="serviceUrl">サービスサイトURL<span class="tag tag-optional">任意</span></label>
-        <input type="url" id="serviceUrl" name="serviceUrl" placeholder="https://example.com">
+        <label for="siteUrl">サイトURL<span class="tag tag-optional">任意</span></label>
+        <input type="url" id="siteUrl" name="siteUrl" placeholder="https://example.com">
       </div>
 
       <div class="field">
@@ -513,22 +732,22 @@ body {
         <p class="hint">既にアカウントをお持ちの場合はご記入ください</p>
       </div>
 
-      <div class="field">
-        <label for="otherSns">その他SNSアカウント<span class="tag tag-optional">任意</span></label>
-        <textarea id="otherSns" name="otherSns" rows="2" placeholder="Instagram / YouTube / TikTok / Facebook など"></textarea>
+      <div class="divider"></div>
+
+      <div class="field" data-required>
+        <div class="field-label">現在のSNS運用状況<span class="tag tag-required">必須</span></div>
+        <div class="choice-group">
+          <label class="choice-item"><input type="radio" name="snsStatus" value="全くやっていない"><span>全くやっていない</span></label>
+          <label class="choice-item"><input type="radio" name="snsStatus" value="アカウントはあるが放置"><span>アカウントはあるが放置</span></label>
+          <label class="choice-item"><input type="radio" name="snsStatus" value="自社で運用中"><span>自社で運用中</span></label>
+          <label class="choice-item"><input type="radio" name="snsStatus" value="外部委託中"><span>外部委託中</span></label>
+        </div>
+        <p class="error-msg">選択してください</p>
       </div>
 
-      <div class="field">
-        <label for="competitors">競合企業・参考アカウント<span class="tag tag-optional">任意</span></label>
-        <textarea id="competitors" name="competitors" rows="2" placeholder="競合企業名やベンチマークにしたいXアカウントなど"></textarea>
-      </div>
-    </div>
-
-    <!-- Card 2: 方向性 -->
-    <div class="card">
       <div class="field" data-required>
         <div class="field-label">X運用の目的<span class="tag tag-required">必須</span></div>
-        <p class="hint" style="margin-bottom:10px;">あてはまるものをすべてお選びください</p>
+        <p class="hint" style="margin-bottom:8px;">あてはまるものをすべてお選びください</p>
         <div class="choice-group">
           <label class="choice-item"><input type="checkbox" name="purpose" value="認知拡大・ブランディング"><span>認知拡大・ブランディング</span></label>
           <label class="choice-item"><input type="checkbox" name="purpose" value="リード獲得・問い合わせ増加"><span>リード獲得・問い合わせ増加</span></label>
@@ -540,21 +759,18 @@ body {
         <p class="error-msg">1つ以上選択してください</p>
       </div>
 
-      <div class="divider"></div>
-
-      <div class="field">
-        <label for="product">繋げたい商品・サービス<span class="tag tag-optional">任意</span></label>
-        <textarea id="product" name="product" rows="2" placeholder="X運用を通じて訴求したい商品やサービスがあればご記入ください"></textarea>
-      </div>
-
       <div class="field">
         <label for="target">ターゲットイメージ<span class="tag tag-optional">任意</span></label>
         <textarea id="target" name="target" rows="2" placeholder="例：30代男性の経営者、IT企業のマーケティング担当者 など"></textarea>
       </div>
-    </div>
 
-    <!-- Card 3: 現状・ご相談内容 -->
-    <div class="card">
+      <div class="field">
+        <label for="competitors">競合企業・参考アカウント<span class="tag tag-optional">任意</span></label>
+        <textarea id="competitors" name="competitors" rows="2" placeholder="競合企業名やベンチマークにしたいXアカウントなど"></textarea>
+      </div>
+
+      <div class="divider"></div>
+
       <div class="field" data-required>
         <div class="field-label">X運用のご経験<span class="tag tag-required">必須</span></div>
         <div class="choice-group">
@@ -567,49 +783,19 @@ body {
         <p class="error-msg">選択してください</p>
       </div>
 
-      <div class="divider"></div>
-
-      <div class="field">
-        <label for="challenges">現在、X運用で感じている課題<span class="tag tag-optional">任意</span></label>
-        <textarea id="challenges" name="challenges" rows="3" placeholder="例：フォロワーが伸びない、投稿のネタが続かない、エンゲージメントが低い、運用に割ける時間がない など"></textarea>
-        <p class="hint">些細なことでも構いません。当日のお打ち合わせに活かします</p>
-      </div>
-
-      <div class="field">
-        <label for="consultation">当日、特にご相談したいこと<span class="tag tag-optional">任意</span></label>
-        <textarea id="consultation" name="consultation" rows="3" placeholder="例：アカウントの方向性、投稿頻度の目安、他社の成功事例を聞きたい など"></textarea>
-      </div>
-    </div>
-
-    <!-- Card 4: サービスご紹介・外注検討の方へ -->
-    <div class="card">
       <div class="field" data-required>
-        <div class="field-label">当日、弊社のX運用サービスについてもご紹介させていただいてよろしいですか？<span class="tag tag-required">必須</span></div>
-        <p class="hint" style="margin-bottom:10px;">ご相談のみのお打ち合わせも歓迎です。お気軽にお選びください</p>
-        <div class="choice-group">
-          <label class="choice-item"><input type="radio" name="serviceIntro" value="ぜひ聞きたい"><span>ぜひ聞きたい</span></label>
-          <label class="choice-item"><input type="radio" name="serviceIntro" value="軽く紹介してもらえればOK"><span>軽く紹介してもらえればOK</span></label>
-          <label class="choice-item"><input type="radio" name="serviceIntro" value="まずは相談のみ希望"><span>まずは相談のみ希望</span></label>
-        </div>
-        <p class="error-msg">選択してください</p>
-      </div>
-
-      <div class="divider"></div>
-
-      <p class="hint" style="margin-bottom:16px;">以下は、運用の外注をご検討中の方のみお答えください</p>
-
-      <div class="field">
-        <div class="field-label">ご希望の開始時期<span class="tag tag-optional">任意</span></div>
+        <div class="field-label">ご希望の開始時期<span class="tag tag-required">必須</span></div>
         <div class="choice-group">
           <label class="choice-item"><input type="radio" name="timeline" value="すぐにでも"><span>すぐにでも</span></label>
           <label class="choice-item"><input type="radio" name="timeline" value="1ヶ月以内"><span>1ヶ月以内</span></label>
           <label class="choice-item"><input type="radio" name="timeline" value="3ヶ月以内"><span>3ヶ月以内</span></label>
           <label class="choice-item"><input type="radio" name="timeline" value="時期未定・情報収集中"><span>時期未定・情報収集中</span></label>
         </div>
+        <p class="error-msg">選択してください</p>
       </div>
 
-      <div class="field">
-        <div class="field-label">月間のご予算<span class="tag tag-optional">任意</span></div>
+      <div class="field" data-required>
+        <div class="field-label">月間のご予算<span class="tag tag-required">必須</span></div>
         <div class="choice-group">
           <label class="choice-item"><input type="radio" name="budget" value="〜10万円"><span>〜10万円</span></label>
           <label class="choice-item"><input type="radio" name="budget" value="10〜30万円"><span>10〜30万円</span></label>
@@ -617,193 +803,329 @@ body {
           <label class="choice-item"><input type="radio" name="budget" value="50万円以上"><span>50万円以上</span></label>
           <label class="choice-item"><input type="radio" name="budget" value="要相談"><span>要相談</span></label>
         </div>
+        <p class="error-msg">選択してください</p>
+      </div>
+
+      <div class="btn-area">
+        <button type="button" class="btn btn-secondary" id="step3Back">戻る</button>
+        <button type="button" class="btn btn-primary" id="step3Next">
+          <span class="btn-text">送信して面談予約へ</span>
+          <span class="spinner"></span>
+        </button>
       </div>
     </div>
+  </div>
 
-    <!-- Card 5: その他 -->
+  <!-- ==================== STEP 4A: 面談予約（個別相談） ==================== -->
+  <div class="step-panel" id="step4consultation">
     <div class="card">
-      <div class="field">
-        <label for="remarks">その他ご要望・ご質問<span class="tag tag-optional">任意</span></label>
-        <textarea id="remarks" name="remarks" rows="3" placeholder="気になっていること、ご要望などご自由にご記入ください"></textarea>
+      <div class="step-tag">予約</div>
+      <div class="card-header">
+        <h2>面談日程のご予約</h2>
+        <p>ご都合の良い日時をお選びください</p>
+      </div>
+      <div class="calendar-wrapper" id="calendarEmbed">
+        <div class="calendar-placeholder">
+          <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+          <p>Googleカレンダーの予約ページが<br>ここに表示されます</p>
+        </div>
       </div>
     </div>
-
-    <!-- Submit -->
-    <div class="submit-area">
-      <button type="submit" class="submit-btn" id="submitBtn">
-        <span class="btn-text">回答を送信する</span>
-        <span class="spinner"></span>
+    <div class="card" style="text-align:center;">
+      <p style="font-size:13px;color:var(--gray-500);margin-bottom:14px;">日程が合わない場合は、担当者より改めてご連絡いたします。</p>
+      <button type="button" class="btn btn-secondary" id="skipCalendar" style="flex:none;width:auto;display:inline-flex;">
+        予約せずに完了する
       </button>
-      <p class="submit-note">送信後、担当者よりご連絡いたします</p>
     </div>
+  </div>
 
-  </form>
+  <!-- ==================== STEP 4B: 完了画面（資料請求） ==================== -->
+  <div class="step-panel" id="step4document"></div>
+
 </main>
 
 <!-- ===== Completion Screen ===== -->
 <div class="completion container" id="completionScreen">
-  <div class="check-circle">
+  <div class="completion-icon">
     <svg viewBox="0 0 24 24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="20 6 9 17 4 12"></polyline>
     </svg>
   </div>
-  <h2>送信が完了しました</h2>
-  <p>ご回答ありがとうございます。<br>内容を確認のうえ、担当者より追ってご連絡いたします。</p>
+  <h2 id="completionTitle">送信が完了しました</h2>
+  <p id="completionMessage">ご回答ありがとうございます。<br>内容を確認のうえ、担当者より追ってご連絡いたします。</p>
 </div>
 
 <!-- ===== Footer ===== -->
 <footer class="footer">
-  &copy; 2025 株式会社SNSの右腕
+  &copy; 2026 株式会社SNSの右腕
 </footer>
 
 <script>
 (function () {
-  // ★ ここにデプロイしたGoogle Apps ScriptのウェブアプリURLを貼り付けてください
-  var GAS_URL = 'https://script.google.com/macros/s/AKfycbzozsBlREv4AXQduBqV1ExbqzWwEr8L3WJIYSefCq9k11Y5ghyRmAUp7BdxpS9J811I0w/exec';
+  var GAS_URL = 'https://script.google.com/macros/s/AKfycbxfjlew7doJ5bZ36dItc2e_-JeKc8g2rfOPfC2pnnjUA9tCVFxuKkZfuYGhQtqkFQRw/exec';
+  var CALENDAR_URL = '';
 
-  var form = document.getElementById('hearingForm');
-  var btn = document.getElementById('submitBtn');
+  var hero = document.getElementById('heroSection');
+  var progressSection = document.getElementById('progressSection');
+  var progressFill = document.getElementById('progressFill');
   var formContainer = document.getElementById('formContainer');
   var completion = document.getElementById('completionScreen');
-  var progressFill = document.getElementById('progressFill');
 
-  // ---------- Progress Bar ----------
-  function updateProgress() {
-    var fields = form.querySelectorAll('.field[data-required]');
-    var filled = 0;
-    for (var i = 0; i < fields.length; i++) {
-      var f = fields[i];
-      var inp = f.querySelector('input[type="text"], input[type="email"], textarea');
-      if (inp && inp.value.trim()) { filled++; continue; }
-      var checked = f.querySelector('input[type="radio"]:checked, input[type="checkbox"]:checked');
-      if (checked) { filled++; }
-    }
-    var pct = Math.round((filled / fields.length) * 100);
-    progressFill.style.width = pct + '%';
+  var panels = {
+    step1: document.getElementById('step1'),
+    step2: document.getElementById('step2'),
+    step3: document.getElementById('step3'),
+    step4consultation: document.getElementById('step4consultation'),
+    step4document: document.getElementById('step4document')
+  };
+
+  var currentStep = 1;
+  var totalSteps = 3;
+  var ctaType = '';
+
+  if (CALENDAR_URL) {
+    document.getElementById('calendarEmbed').innerHTML = '<iframe src="' + CALENDAR_URL + '" style="border:0;width:100%;height:600px;" loading="lazy"></iframe>';
   }
-  form.addEventListener('input', updateProgress);
-  form.addEventListener('change', updateProgress);
 
-  // ---------- Validation ----------
-  function validate() {
-    var valid = true;
-    var errorFields = form.querySelectorAll('.field.error');
-    for (var i = 0; i < errorFields.length; i++) {
-      errorFields[i].classList.remove('error');
+  // ── Progress ──
+  function updateProgress() {
+    var pct = Math.round((currentStep / totalSteps) * 100);
+    if (pct > 100) pct = 100;
+    progressFill.style.width = pct + '%';
+    document.getElementById('currentStepNum').textContent = Math.min(currentStep, totalSteps);
+    document.getElementById('totalStepNum').textContent = totalSteps;
+    document.getElementById('progressPct').textContent = pct + '%';
+  }
+
+  // ── Step Navigation ──
+  function goToStep(step) {
+    Object.keys(panels).forEach(function(key) { panels[key].classList.remove('active'); });
+
+    if (step === 1) panels.step1.classList.add('active');
+    else if (step === 2) panels.step2.classList.add('active');
+    else if (step === 3) panels.step3.classList.add('active');
+    else if (step === 4) {
+      if (ctaType === '個別相談') panels.step4consultation.classList.add('active');
+      else panels.step4document.classList.add('active');
     }
 
-    var requiredFields = form.querySelectorAll('.field[data-required]');
-    for (var i = 0; i < requiredFields.length; i++) {
-      var field = requiredFields[i];
+    currentStep = step;
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-      // Text / email inputs
-      var input = field.querySelector('input[type="text"], input[type="email"]');
+  // ── CTA Selection ──
+  var ctaOptions = document.querySelectorAll('.cta-option');
+  ctaOptions.forEach(function(opt) {
+    opt.addEventListener('click', function() {
+      ctaOptions.forEach(function(o) { o.classList.remove('selected'); });
+      opt.classList.add('selected');
+      opt.querySelector('input').checked = true;
+      ctaType = opt.getAttribute('data-value');
+      // 個別相談 = 3ステップ、資料請求 = 2ステップ
+      totalSteps = (ctaType === '個別相談') ? 3 : 2;
+      document.querySelector('.error-cta').classList.remove('error');
+      updateProgress();
+    });
+  });
+
+  // ── Step 1 ──
+  document.getElementById('step1Next').addEventListener('click', function() {
+    if (!ctaType) {
+      document.querySelector('.error-cta').classList.add('error');
+      return;
+    }
+    goToStep(2);
+  });
+
+  // ── Step 2 ──
+  document.getElementById('step2Back').addEventListener('click', function() { goToStep(1); });
+  document.getElementById('step2Next').addEventListener('click', function() {
+    if (!validatePanel(panels.step2)) return;
+    if (ctaType === '資料請求') {
+      var btn = document.getElementById('step2Next');
+      btn.classList.add('loading');
+      btn.disabled = true;
+      submitForm(function() {
+        btn.classList.remove('loading');
+        btn.disabled = false;
+        showDocumentCompletion();
+      });
+    } else {
+      goToStep(3);
+    }
+  });
+
+  // ── Step 3 ──
+  document.getElementById('step3Back').addEventListener('click', function() { goToStep(2); });
+  document.getElementById('step3Next').addEventListener('click', function() {
+    if (!validatePanel(panels.step3)) return;
+    var btn = document.getElementById('step3Next');
+    btn.classList.add('loading');
+    btn.disabled = true;
+    submitForm(function() {
+      btn.classList.remove('loading');
+      btn.disabled = false;
+      goToStep(4);
+    });
+  });
+
+  // ── Skip Calendar ──
+  document.getElementById('skipCalendar').addEventListener('click', function() {
+    showCompletion('お申し込みありがとうございます', 'ご回答いただいた内容をもとに、担当者よりご連絡いたします。<br>面談日程は改めて調整させていただきます。');
+  });
+
+  function showDocumentCompletion() {
+    showCompletion('資料請求を受け付けました', 'ご入力いただいたメールアドレスに資料をお送りいたします。<br>今しばらくお待ちください。');
+  }
+
+  function showCompletion(title, message) {
+    formContainer.style.display = 'none';
+    hero.style.display = 'none';
+    progressSection.style.display = 'none';
+    document.getElementById('completionTitle').innerHTML = title;
+    document.getElementById('completionMessage').innerHTML = message;
+    completion.classList.add('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ── Validation ──
+  function validatePanel(panel) {
+    var valid = true;
+    panel.querySelectorAll('.field.error').forEach(function(f) { f.classList.remove('error'); });
+
+    panel.querySelectorAll('.field[data-required]').forEach(function(field) {
+      var input = field.querySelector('input[type="text"], input[type="email"], input[type="tel"]');
       if (input && !input.value.trim()) {
         field.classList.add('error');
         valid = false;
-        continue;
+        return;
       }
 
-      // Email format check
       var emailInput = field.querySelector('input[type="email"]');
       if (emailInput && emailInput.value.trim()) {
-        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(emailInput.value.trim())) {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
           field.classList.add('error');
           field.querySelector('.error-msg').textContent = '正しいメールアドレスを入力してください';
           valid = false;
-          continue;
+          return;
         }
       }
 
-      // Checkbox group
-      var checkboxes = field.querySelectorAll('input[type="checkbox"]');
-      if (checkboxes.length > 0) {
-        var checked = false;
-        for (var j = 0; j < checkboxes.length; j++) {
-          if (checkboxes[j].checked) { checked = true; break; }
-        }
+      var textarea = field.querySelector('textarea');
+      if (textarea && !input && !textarea.value.trim()) {
+        field.classList.add('error');
+        valid = false;
+        return;
+      }
+
+      var radios = field.querySelectorAll('input[type="radio"]');
+      if (radios.length > 0 && !input) {
+        var checked = Array.from(radios).some(function(r) { return r.checked; });
         if (!checked) { field.classList.add('error'); valid = false; }
       }
 
-      // Radio group
-      var radios = field.querySelectorAll('input[type="radio"]');
-      if (radios.length > 0) {
-        var selected = false;
-        for (var j = 0; j < radios.length; j++) {
-          if (radios[j].checked) { selected = true; break; }
-        }
-        if (!selected) { field.classList.add('error'); valid = false; }
+      var checkboxes = field.querySelectorAll('input[type="checkbox"]');
+      if (checkboxes.length > 0) {
+        var checked = Array.from(checkboxes).some(function(c) { return c.checked; });
+        if (!checked) { field.classList.add('error'); valid = false; }
       }
+    });
+
+    if (!valid) {
+      var firstErr = panel.querySelector('.field.error');
+      if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
     return valid;
   }
 
-  // ---------- Collect form data ----------
+  // ── Collect Data ──
   function collectData() {
-    var purposeEls = form.querySelectorAll('input[name="purpose"]:checked');
-    var purposes = [];
-    for (var i = 0; i < purposeEls.length; i++) purposes.push(purposeEls[i].value);
-
-    var radio = function (name) {
-      var el = form.querySelector('input[name="' + name + '"]:checked');
+    var radio = function(name) {
+      var el = document.querySelector('input[name="' + name + '"]:checked');
       return el ? el.value : '';
     };
-
-    return {
-      companyName: form.companyName.value.trim(),
-      contactName: form.contactName.value.trim(),
-      email: form.email.value.trim(),
-      business: form.business.value.trim(),
-      employees: radio('employees'),
-      serviceUrl: form.serviceUrl.value.trim(),
-      xAccount: form.xAccount.value.trim(),
-      otherSns: form.otherSns.value.trim(),
-      competitors: form.competitors.value.trim(),
-      purpose: purposes.join(', '),
-      product: form.product.value.trim(),
-      target: form.target.value.trim(),
-      experience: radio('experience'),
-      challenges: form.challenges.value.trim(),
-      consultation: form.consultation.value.trim(),
-      serviceIntro: radio('serviceIntro'),
-      timeline: radio('timeline'),
-      budget: radio('budget'),
-      remarks: form.remarks.value.trim()
+    var checkboxes = function(name) {
+      return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked')).map(function(el) { return el.value; }).join(', ');
     };
+    var val = function(id) {
+      var el = document.getElementById(id);
+      return el ? el.value.trim() : '';
+    };
+
+    var data = {
+      ctaType: ctaType,
+      lastName: val('lastName'),
+      firstName: val('firstName'),
+      email: val('email'),
+      phone: val('phone'),
+      companyName: val('companyName'),
+      department: val('department'),
+      jobTitle: val('jobTitle'),
+      employees: radio('employees'),
+      consideration: radio('consideration'),
+      siteUrl: val('siteUrl'),
+      xAccount: val('xAccount'),
+      snsStatus: radio('snsStatus'),
+      purpose: checkboxes('purpose'),
+      target: val('target'),
+      competitors: val('competitors'),
+      experience: radio('experience'),
+      timeline: radio('timeline'),
+      budget: radio('budget')
+    };
+
+    data.leadScore = calculateLeadScore(data);
+    return data;
   }
 
-  // ---------- Submit ----------
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!validate()) {
-      var firstError = form.querySelector('.field.error');
-      if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return;
-    }
+  // ── Lead Score ──
+  function calculateLeadScore(data) {
+    var score = 0;
 
-    btn.classList.add('loading');
-    btn.disabled = true;
+    if (data.budget === '50万円以上') score += 3;
+    else if (data.budget === '30〜50万円') score += 3;
+    else if (data.budget === '10〜30万円') score += 2;
+    else if (data.budget === '〜10万円') score += 1;
+
+    if (data.timeline === 'すぐにでも') score += 3;
+    else if (data.timeline === '1ヶ月以内') score += 2;
+    else if (data.timeline === '3ヶ月以内') score += 1;
+
+    if (data.employees === '301名以上') score += 3;
+    else if (data.employees === '101〜300名') score += 3;
+    else if (data.employees === '51〜100名') score += 2;
+    else if (data.employees === '11〜50名') score += 1;
+
+    if (data.consideration === 'すぐに導入したい') score += 3;
+    else if (data.consideration === '1〜3ヶ月以内に検討') score += 2;
+    else if (data.consideration === '情報収集段階') score += 1;
+
+    if (data.ctaType === '個別相談') score += 2;
+
+    if (score >= 9) return 'Hot';
+    if (score >= 5) return 'Warm';
+    return 'Cold';
+  }
+
+  // ── Submit ──
+  function submitForm(callback) {
+    var data = collectData();
 
     fetch(GAS_URL, {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(collectData())
+      body: JSON.stringify(data)
     })
-    .then(function () {
-      formContainer.style.display = 'none';
-      document.querySelector('.hero').style.display = 'none';
-      document.getElementById('progressBar').style.display = 'none';
-      completion.classList.add('show');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    .then(function() {
+      if (callback) callback();
     })
-    .catch(function () {
+    .catch(function() {
       alert('送信中にエラーが発生しました。お手数ですが、時間をおいて再度お試しください。');
-      btn.classList.remove('loading');
-      btn.disabled = false;
     });
-  });
+  }
+
 })();
 </script>
 </body>
